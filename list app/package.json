@@ -1,0 +1,14 @@
+{
+  "name": "list-app",
+  "version": "1.0.0",
+  "description": "app for creating lists",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Rokas Misevicius",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^23.2.0"
+  }
+}
