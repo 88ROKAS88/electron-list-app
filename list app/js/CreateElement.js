@@ -42,4 +42,12 @@ class CreateElement {
     CreateElement.addClasses(button, classes);
     return button;
   }
+  // ############################## INPUT ##############################
+  static input() {
+    const input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.classList.add("form-control");
+
+    return input;
+  }
 }

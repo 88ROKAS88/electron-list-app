@@ -1,7 +1,5 @@
 class MyList {
-  // static currentList;
   static display = document.getElementById("mla-list-display");
-  // static data = [{ name: "pagrindinis" }];
 
   // ############################## LOAD LIST DATA ##############################
   static loadList(listName) {
@@ -36,9 +34,7 @@ class MyList {
     div.appendChild(button);
 
     // INPUT
-    const input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.classList.add("form-control");
+    const input = CreateElement.input();
     input.setAttribute("id", "mla-l-input");
     div.appendChild(input);
 
@@ -48,13 +44,9 @@ class MyList {
 
   // ############################## DISPLAY LIST ##############################
   static displayList(listName) {
-    // this.currentList = listName;
     const data = MyList.loadList(listName);
-
     MyList.display.innerHTML = "";
-
     const uList = CreateElement.list(data, listName);
-
     MyList.display.appendChild(uList);
     MyList.appendToList(listName);
   }
@@ -72,16 +64,15 @@ class MyList {
       { name: "mla-add-li", value: listName },
       { name: "mla-li-index", value: listIndex },
     ];
-    const button = CreateElement.button("Save", saveButtonAttributes, [
+    const saveButton = CreateElement.button("Save", saveButtonAttributes, [
       "btn",
       "btn-outline-success",
     ]);
-    div.appendChild(button);
+    div.appendChild(saveButton);
 
     // INPUT
-    const input = document.createElement("input");
-    input.setAttribute("type", "text");
-    input.classList.add("form-control");
+    const input = CreateElement.input();
+
     input.value = MyList.loadList(listName)[listIndex];
     input.setAttribute("id", "mla-l-input");
     div.appendChild(input);
@@ -91,11 +82,12 @@ class MyList {
       { name: "mla-add-li", value: listName },
       { name: "mla-li-index", value: listIndex },
     ];
-    const button2 = CreateElement.button("Delete", deleteButtonAttributes, [
-      "btn",
-      "btn-outline-danger",
-    ]);
-    div.appendChild(button2);
+    const deleteButton = CreateElement.button(
+      "Delete",
+      deleteButtonAttributes,
+      ["btn", "btn-outline-danger"]
+    );
+    div.appendChild(deleteButton);
 
     // DIV
     MyList.display.appendChild(div);
