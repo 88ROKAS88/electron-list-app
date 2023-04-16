@@ -17,7 +17,8 @@ MyList.display.addEventListener("click", (e) => {
   // identify - create new list button
   if (
     e.target.getAttribute("id") == "mla-add-ul" &&
-    document.getElementById("mla-l-input").value != ""
+    // document.getElementById("mla-l-input").value != ""
+    Restrictions.listName(document.getElementById("mla-l-input").value)
   ) {
     let inputValue = document.getElementById("mla-l-input").value;
 

@@ -50,4 +50,15 @@ class CreateElement {
 
     return input;
   }
+
+  // ############################## ALERT ##############################
+  static alert(text) {
+    const div = document.createElement("div");
+    div.innerText = text;
+    div.setAttribute("role", "alert");
+    div.classList.add("alert");
+    div.classList.add("alert-danger");
+
+    return div;
+  }
 }
