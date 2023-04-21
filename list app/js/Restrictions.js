@@ -15,6 +15,13 @@ class Restrictions {
         message += " " + name + " - list name is already taken. ";
       }
     }
+    // allow ounly letters and spaces
+    var RegExpression = /^[a-zA-Z]*$/;
+    if (!RegExpression.test(name)) {
+      flag = false;
+      message +=
+        " " + name + " - list name must contain ounly letters and spaces. ";
+    }
 
     if (flag) {
       return true;
