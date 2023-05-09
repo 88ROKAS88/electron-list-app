@@ -36,6 +36,7 @@ class MyNavigation {
       MyNavigation.nav.appendChild(button);
     }
     MyNavigation.displayNavigationMenuButton();
+    MyNavigation.addNewList();
   }
 
   // ############################## CREATE NEW LIST ##############################
@@ -44,6 +45,7 @@ class MyNavigation {
     const div = document.createElement("div");
     div.classList.add("input-group");
     div.classList.add("mt-1");
+    div.classList.add("col-4");
     // BUTTON
     const button = CreateElement.button(
       "New list",
@@ -58,7 +60,7 @@ class MyNavigation {
     div.appendChild(input);
 
     // DIV
-    MyList.display.appendChild(div);
+    MyNavigation.nav.appendChild(div);
   }
 
   // ############################## DELETE LIST ##############################
@@ -83,7 +85,7 @@ class MyNavigation {
   // ############################## DISPLAY NAVIGATION MENU ##############################
   static displayNavigationMenu() {
     MyList.display.innerHTML = "";
-    MyNavigation.addNewList();
+    // MyNavigation.addNewList();
     MyNavigation.deleteList();
   }
 }

@@ -11,9 +11,7 @@ MyNavigation.nav.addEventListener("click", (e) => {
     // console.log(e.target.getAttribute("mla-name"));
     MyList.displayList(e.target.getAttribute("mla-name"));
   }
-});
 
-MyList.display.addEventListener("click", (e) => {
   // identify - create new list button
   if (
     e.target.getAttribute("id") == "mla-add-ul" &&
@@ -31,7 +29,9 @@ MyList.display.addEventListener("click", (e) => {
     MyNavigation.displayNavigation();
     MyNavigation.displayNavigationMenu();
   }
+});
 
+MyList.display.addEventListener("click", (e) => {
   // identify - delete list button
   if (e.target.classList.contains("btn-danger")) {
     let listIndex = e.target.getAttribute("mla-index");
